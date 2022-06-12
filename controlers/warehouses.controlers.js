@@ -4,6 +4,10 @@ exports.getWarehouses = async (req, res) => {
     const warehousesList = await warehousesModel.find({});
     res.send(warehousesList);
 };
+exports.getWarehousesByPositon = async (req, res) => {
+    const warehousesList = await warehousesModel.find({ViTri: req.params.position});
+    res.send(warehousesList);
+}
 exports.postWarehouses = async (req, res) => {
     console.log(req.body);
     const objwarehouses = new warehousesModel({

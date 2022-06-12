@@ -4,6 +4,7 @@ var Warehouse = require('../models/warehouses.models');
 var WarehouseController = require('../controlers/warehouses.controlers');
 
 router.get('/', WarehouseController.getWarehouses);
+router.get('/:position', WarehouseController.getWarehousesByPositon);
 router.post('/add', WarehouseController.postWarehouses);
 router.post('/edit/:id', WarehouseController.editWarehouses);
 router.post('/delete/:id', WarehouseController.deleteWarehouses);
