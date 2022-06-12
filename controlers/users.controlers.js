@@ -100,7 +100,7 @@ exports.postEditPassword = async (req, res) => {
         const salt = bcrypt.genSaltSync(10);
         user.password = await bcrypt.hashSync(req.body.newPassword, salt);
         await user.save();
-        res.json({user,msg: "Đổi mật khẩu thành công"});
+        res.json({message: "Đổi mật khẩu thành công"});
     } catch (error) {
         res.json(error);
     }

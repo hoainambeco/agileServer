@@ -19,7 +19,6 @@ exports.postWarehouses = async (req, res) => {
         SoLuong: req.body.SoLuong,
         NgayNhap: req.body.NgayNhap,
         moTa: req.body.moTa,
-
     });
     console.log(objwarehouses);
     if (isNaN(objwarehouses.DonGia) || isNaN(objwarehouses.SoLuong)) {
@@ -32,7 +31,7 @@ exports.postWarehouses = async (req, res) => {
                 console.log(err);
             }
             console.log('Thêm thành công');
-            res.send(objwarehouses);
+            res.json(objwarehouses);
         });
     }
 };
